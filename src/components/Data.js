@@ -8,7 +8,7 @@ function Data(props) {
 
     function clickOnBtn() {
         setDataOfUser([]);
-        setCount(0)
+        setCounter(0)
     }
 
     return (
