@@ -3,19 +3,22 @@ import { useState } from 'react';
 
 function Data(props) {
     const [DataOfUser, setDataOfUser] = useState(props.UserData);
-    const count = props.UserData.length;
+    const [Counter, setCounter]= useState(props.UserData.length)
+   
 
-    function clearDataBtn() {
+    function clickOnBtn() {
         setDataOfUser([]);
+        setCount(0)
     }
 
     return (
         <div className='container'>
             <div className='headings'>
                 <h2>user List</h2>
-                <h3 className='counter'>{count}</h3>
+                <h3 className='counter'>{Counter}</h3>
             </div>
             {DataOfUser?.map((event, index) => {
+                console.log("event" + event)
                 return (
                     <div className="data" key={index}>
                         <img src={event.image} />
@@ -26,7 +29,7 @@ function Data(props) {
                     </div>
                 );
             })}
-            <button onClick={clearDataBtn}>Clear All</button>
+            <button onClick={clickOnBtn}>Clear All</button>
         </div>
     );
 }
