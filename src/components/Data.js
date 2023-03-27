@@ -3,10 +3,10 @@ import { useState } from 'react';
 
 function Data(props) {
     const [DataOfUser, setDataOfUser] = useState(props.UserData);
-    var count = props.UserData.length;
+    const count = props.UserData.length;
 
     function clearDataBtn() {
-        setDataOfUser();
+        setDataOfUser([]);
     }
 
     return (
